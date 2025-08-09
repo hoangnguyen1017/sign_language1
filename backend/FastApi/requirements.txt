@@ -4,4 +4,5 @@ numpy
 opencv-python
 Pillow
 tensorflow
-mediapipe
+mediapipe==0.10.14
+python-3.10.13
