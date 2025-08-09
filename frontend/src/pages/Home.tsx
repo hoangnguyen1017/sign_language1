@@ -9,7 +9,7 @@ import mail from "../assets/mail.svg";
 import logo from "../assets/logo.svg";
 import facebook from "../assets/facebook.svg";
 import tiktok from "../assets/tiktok.svg";
-import Mail_icon from "../assets/mail_icon.svg";
+import mailIcon from "../assets/mail_icon.svg";
 import location from "../assets/location.svg";
 import phone from "../assets/phone.svg";
 import { useNavigate } from "react-router-dom";
@@ -249,7 +249,7 @@ const Home = () => {
                 </div>
                 <div className="d-flex gap-3">
                   {" "}
-                  <img src={Mail_icon} alt="" />
+                  <img src={mailIcon} alt="" />
                   <p>thusinglanguagedetector@gmail.com</p>
                 </div>
                 <div className="d-flex gap-3">
