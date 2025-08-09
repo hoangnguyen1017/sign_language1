@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
-import background from "../assets/Background.svg";
+import background from "../assets/background.svg";
 import logo from "../assets/logo.svg";
 import Image from "../assets/bantay.svg";
 const API_URL = import.meta.env.VITE_API_URL;

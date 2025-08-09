@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.svg";
 import user_icon from "../assets/user_icon.svg";
-import background from "../assets/Background.svg";
+import background from "../assets/background.svg";
 import Button from "../components/Button"; // Nếu cần thiết, nếu không có thì có thể xóa
 const API_URL = import.meta.env.VITE_API_URL;
 // ✅ GradientBox giữ nguyên như trong giao diện mẫu

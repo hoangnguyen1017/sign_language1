@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
-import background from "../assets/Background.svg";
-import logo from "../assets/LOGO.svg";
+import background from "../assets/background.svg";
+import logo from "../assets/logo.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

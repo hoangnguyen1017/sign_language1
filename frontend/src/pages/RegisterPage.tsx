@@ -4,7 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Button from "../components/Button";
-import background from "../assets/Background.svg";
+import background from "../assets/background.svg";
 import logo from "../assets/logo.svg";
 const API_URL = import.meta.env.VITE_API_URL;
 // 🧪 Schema kiểm tra hợp lệ
