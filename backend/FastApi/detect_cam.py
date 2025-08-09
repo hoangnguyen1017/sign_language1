@@ -21,10 +21,6 @@ reverse_replacements = {
     "slash": "/", "backslash": "\\", "question": "?", "tilde": "~", "dot": "."
 }
 
-# === Font ===
-font_path = "C:/Windows/Fonts/arial.ttf"
-font = ImageFont.truetype(font_path, 32)
-
 # === Mediapipe ===
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -140,11 +136,6 @@ def reset_text():
     global result_text
     result_text = ""
     
-def draw_label_on_frame(frame, label):
-    img_pil = Image.fromarray(frame)
-    draw = ImageDraw.Draw(img_pil)
-    draw.text((20, 50), label, font=font, fill=(0, 255, 0))
-    return np.array(img_pil)
 
 def reset_append_cooldown():
     global append_cooldown
@@ -204,30 +195,3 @@ def detect_sign_from_frame(frame):
 
     return ""
 
-if __name__ == "__main__":
-    cap = cv2.VideoCapture(0)
-    if not cap.isOpened():
-        print("❌ Không thể mở webcam.")
-        exit()
-
-    print("📸 Bắt đầu nhận diện ký hiệu... Nhấn 'q' để thoát.")
-
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            print("❌ Không thể đọc frame từ webcam.")
-            break
-
-        label = detect_sign_from_frame(frame)
-        if label:
-            print("✅ Nhận diện:", label, "| Văn bản:", result_text)
-
-        frame_display = draw_label_on_frame(frame, result_text)
-        cv2.imshow("🖐️ Nhận diện ngôn ngữ ký hiệu (Ấn Q để thoát)", frame_display)
-
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-    cap.release()
-    cv2.destroyAllWindows()
-    print("📴 Đã dừng webcam.")
