@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import background from "../assets/background.svg";
 import logo from "../assets/logo.svg";
 import Button from "../components/Button";
-const API_URL = import.meta.env.VITE_API_URL;
+const AUTH_API_URL = import.meta.env.VITE_AUTH_API_URL;
 const ForgotPassword = () => {
   const [step, setStep] = useState(1);
   const [account, setAccount] = useState("");
@@ -29,7 +29,7 @@ const ForgotPassword = () => {
     setError("");
     setMessage("");
     try {
-      const res = await axios.post(`${API_URL}/auth/forgot-password/send-otp`, { account });
+      const res = await axios.post(`${AUTH_API_URL}/auth/forgot-password/send-otp`, { account });
       setMessage(res.data.message);
       setStep(2);
     } catch (err) {
@@ -41,7 +41,7 @@ const ForgotPassword = () => {
     setError("");
     setMessage("");
     try {
-      const res = await axios.post(`${API_URL}/verify-otp`, { account, otp });
+      const res = await axios.post(`${AUTH_API_URL}/verify-otp`, { account, otp });
       setMessage(res.data.message);
       setStep(3);
     } catch (err) {
@@ -59,7 +59,7 @@ const ForgotPassword = () => {
     }
 
     try {
-      const res = await axios.post(`${API_URL}/auth/forgot-password/reset`, {
+      const res = await axios.post(`${AUTH_API_URL}/auth/forgot-password/reset`, {
         account,
         otp,
         newPassword,

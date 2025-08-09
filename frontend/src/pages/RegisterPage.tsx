@@ -6,7 +6,7 @@ import * as yup from "yup";
 import Button from "../components/Button";
 import background from "../assets/background.svg";
 import logo from "../assets/logo.svg";
-const API_URL = import.meta.env.VITE_API_URL;
+const AUTH_API_URL = import.meta.env.VITE_AUTH_API_URL;
 // 🧪 Schema kiểm tra hợp lệ
 const schema = yup.object().shape({
   account: yup
@@ -40,7 +40,7 @@ const RegisterPage: React.FC = () => {
 
   const onSubmit = async (data: any) => {
     try {
-      const response = await fetch(`${API_URL}/auth/register`, {
+      const response = await fetch(`${AUTH_API_URL}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

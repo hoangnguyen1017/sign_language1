@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 import user_icon from "../assets/user_icon.svg";
 import background from "../assets/background.svg";
 import Button from "../components/Button"; // Nếu cần thiết, nếu không có thì có thể xóa
-const API_URL = import.meta.env.VITE_API_URL;
+const FASTAPI_URL = import.meta.env.VITE_FASTAPI_URL;
 // ✅ GradientBox giữ nguyên như trong giao diện mẫu
 const GradientBox: React.FC<{
   children: React.ReactNode;
@@ -81,7 +81,7 @@ const CameraPage = () => {
     formData.append("file", blob, "frame.jpg");
 
     try {
-      const response = await fetch(`${API_URL}/predict/`, {
+      const response = await fetch(`${FASTAPI_URL}/predict/`, {
         method: "POST",
         body: formData,
       });
@@ -90,7 +90,7 @@ const CameraPage = () => {
         setLabel(data.label);
 
         // 🔄 Gọi backend để lấy result_text đã được xử lý (có dấu, xóa, space)
-        const textResponse = await fetch(`${API_URL}/text/`);
+        const textResponse = await fetch(`${FASTAPI_URL}/text/`);
         const textData = await textResponse.json();
         setNote(textData.text);
       }

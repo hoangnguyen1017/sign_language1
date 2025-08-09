@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import background from "../assets/background.svg";
 import logo from "../assets/logo.svg";
 import Image from "../assets/bantay.svg";
-const API_URL = import.meta.env.VITE_API_URL;
+const AUTH_API_URL = import.meta.env.VITE_AUTH_API_URL;
 const FeedbackPage: React.FC = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
@@ -21,7 +21,7 @@ const FeedbackPage: React.FC = () => {
     }
 
     try {
-      await fetch(`${API_URL}/feedback`, {
+      await fetch(`${AUTH_API_URL}/feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

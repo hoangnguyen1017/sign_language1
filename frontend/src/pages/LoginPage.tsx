@@ -6,7 +6,7 @@ import logo from "../assets/logo.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-const API_URL = import.meta.env.VITE_API_URL;
+const AUTH_API_URL = import.meta.env.VITE_AUTH_API_URL;
 // ✅ Schema kiểm tra form với Yup
 const schema = yup.object().shape({
   username: yup.string().required("Vui lòng nhập tài khoản hoặc email"),
@@ -34,7 +34,7 @@ const LoginPage: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch(`${API_URL}/auth/login`, {
+      const response = await fetch(`${AUTH_API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
