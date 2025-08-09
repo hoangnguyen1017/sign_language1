@@ -11,7 +11,7 @@ import facebook from "../assets/facebook.svg";
 import tiktok from "../assets/tiktok.svg";
 import mailIcon from "../assets/Mail_icon.svg";
 import location from "../assets/location.svg";
-import phone from "../assets/phone.svg";
+import phone from "../assets/Phone.svg";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
