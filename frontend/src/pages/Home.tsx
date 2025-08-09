@@ -9,7 +9,7 @@ import mail from "../assets/mail.svg";
 import logo from "../assets/logo.svg";
 import facebook from "../assets/facebook.svg";
 import tiktok from "../assets/tiktok.svg";
-import mailIcon from "../assets/mail_icon.svg";
+import mailIcon from "../assets/Mail_icon.svg";
 import location from "../assets/location.svg";
 import phone from "../assets/phone.svg";
 import { useNavigate } from "react-router-dom";

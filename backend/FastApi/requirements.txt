@@ -5,4 +5,4 @@ opencv-python
 Pillow
 tensorflow
 mediapipe
-
+python-multipart
